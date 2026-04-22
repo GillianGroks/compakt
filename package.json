@@ -21,7 +21,10 @@
     "CHANGELOG.md"
   ],
   "openclaw": {
-    "extensions": "dist/index.js"
+    "extensions": "dist/index.js",
+    "compat": {
+      "pluginApi": ">=2026.4.10"
+    }
   },
   "author": "Gillian Groks",
   "license": "MIT",
