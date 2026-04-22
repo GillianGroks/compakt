@@ -71,11 +71,11 @@ EOF
 ### 2. Install the Plugin
 
 ```bash
-# Install from ClawHub (recommended)
-openclaw plugins install compakt
+# Install from npm
+npm install compakt
 
-# Or install locally from source
-npm install -g .
+# Or install from ClawHub (recommended for OpenClaw users)
+openclaw plugins install compakt
 ```
 
 ### 3. Configure
