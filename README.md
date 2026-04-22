@@ -43,7 +43,7 @@ The VRAM spike during Compakt compaction is essentially just the compaction mode
 | Component | VRAM |
 |-----------|------|
 | System + browser baseline | ~2.1 GB |
-| Compaction model (qwen3.5-32k) | ~6.5 GB |
+| Compaction model (qwen3.5:4b-32k) | ~6.5 GB |
 | Compakt peak during compaction | ~8.6 GB |
 
 **Note:** Peak VRAM varies based on your system baseline (browser tabs, other apps). Measurements above were taken with a ~2.1 GB baseline. Your baseline may be higher if you have more applications running, but the relative savings remain consistent.
@@ -118,11 +118,11 @@ Edit `~/.openclaw/openclaw.json`:
 
 ### Provider Support
 
-Currently supports **Ollama providers only**. Other providers (Anthropic, OpenAI, etc.) will log a warning and skip compaction.
+Currently supports **Ollama providers only**. Other providers (Anthropic, OpenAI, etc.) will log a warning and skip compaction via compakt.
 
 ### Context Window Matching
 
-**Critical:** `chunkContextWindow` must be ≤ your model's `num_ctx`.
+**Critical:** `chunkContextWindow` must be ≤ your compaction model's `num_ctx`.
 
 | Model num_ctx | Recommended chunkContextWindow |
 |---------------|-------------------------------|
