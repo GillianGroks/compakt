@@ -1,6 +1,6 @@
 {
   "name": "compakt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Chunked context compaction plugin for local LLMs.",
   "main": "dist/index.js",
