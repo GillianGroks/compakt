@@ -13,6 +13,19 @@
 **Trade-off:** Smaller context windows save VRAM but lose fine-grained details. 
 Use 32K if you need the model to recall specific detailed information.
 
+### Sizing Your Compaction Model
+
+A good rule of thumb: **compaction model's num_ctx can be ~4x smaller than your main model's num_ctx** without significant context loss.
+
+| Main Model Context | Recommended Compaction Model |
+|-------------------|------------------------------|
+| 128K (e.g., glm-5.1:cloud) | 32K |
+| 32K (default) | 8K |
+| 16K | 4K |
+| 8K | 2K (may lose detail) |
+
+**Why 4x works:** The compaction model summarizes conversation history into compact summaries. It doesn't need to hold the entire context at once — it processes chunks and accumulates summaries. A 4x smaller context window still captures enough detail for effective summarization.
+
 ## Performance
 
 Compakt dramatically reduces VRAM usage during context compaction:
