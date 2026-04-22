@@ -1,0 +1,8 @@
+src/
+tests/
+docs/
+*.md
+!README.md
+DEVELOPMENT_HISTORY.md
+Compakt-v1_0_0-Release_Plan.md
+*.tsbuildinfo

@@ -1,0 +1,61 @@
+{
+  "id": "compakt",
+  "name": "Compakt",
+  "description": "Chunked context compaction plugin for local LLMs.",
+  "version": "1.0.0",
+  "author": "gillian groks",
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true,
+        "title": "Enable Compakt",
+        "description": "Enable or disable the Compakt plugin."
+      },
+      "summaryModel": {
+        "type": "string",
+        "default": "",
+        "title": "Summary Model",
+        "description": "Model used for summarization (e.g., 'ollama/qwen3.5-compaction'). Must match a model available in your Ollama instance."
+      },
+      "summaryMaxTokens": {
+        "type": "number",
+        "default": 1000,
+        "minimum": 100,
+        "maximum": 32000,
+        "title": "Summary Max Tokens",
+        "description": "Maximum tokens for the summarizer output."
+      },
+      "charsPerToken": {
+        "type": "number",
+        "default": 4,
+        "minimum": 1,
+        "title": "Characters per Token",
+        "description": "Approximate characters per token for estimation. Use 4 for English, 2-3 for code-heavy content."
+      },
+      "chunkContextWindow": {
+        "type": "number",
+        "default": 8192,
+        "minimum": 1024,
+        "title": "Chunk Context Window",
+        "description": "Context window size (tokens) for the summarization model. MUST match or be less than your model's num_ctx. Common values: 8192, 16384, 32768."
+      },
+      "chunkOverlap": {
+        "type": "number",
+        "default": 500,
+        "minimum": 0,
+        "title": "Chunk Overlap",
+        "description": "Number of overlapping tokens between chunks for context continuity."
+      },
+      "logLevel": {
+        "type": "string",
+        "enum": ["debug", "info", "warn", "error"],
+        "default": "info",
+        "title": "Log Level",
+        "description": "Logging verbosity for the plugin."
+      }
+    },
+    "required": []
+  }
+}
